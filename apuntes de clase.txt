@@ -1,0 +1,110 @@
+ngome@DESKTOP-B6TLI39 MINGW64 /d/OneDrive - Universidad de los Andes/Trabajo/platzi/curso profesional de GIT y GithHub/proyecto1 Gitlocal (master)
+$ alias arbolito="git log --all --graph --decorate --oneline"
+
+ngome@DESKTOP-B6TLI39 MINGW64 /d/OneDrive - Universidad de los Andes/Trabajo/platzi/curso profesional de GIT y GithHub/proyecto1 Gitlocal (master)
+$ arbolito
+* a220efd (HEAD -> master, origin/master) ahora es el 2.0
+*   2708e58 (origin/main, main) Merge branch 'master' of https://github.com/ngomez07/Hyperblog
+|\
+| *   fab5401 soluciuone el conflicto de las ramas al fusionar
+| |\
+| | * cbc65f5 (cabecera) modifique cabecera y color del texto
+| * | d2b469e modifique cabecera y color del texto y agregue un parrafo
+| |/
+| * 84aae25 Trabajo traido del curso
+| *   af6fda9 Merge branch 'cabecera'
+| |\
+| | * 1e91061 Cabecera completa
+| | * ca4cfb0 Primer commit
+| * | be7d9fa Cambio de fuente con contenido nuevo
+| |/
+| * f5e4209 Primer comit
+* b037cd5 Initial commit
+
+ngome@DESKTOP-B6TLI39 MINGW64 /d/OneDrive - Universidad de los Andes/Trabajo/platzi/curso profesional de GIT y GithHub/proyecto1 Gitlocal (master)
+$ git tag -a v0.1 -m "Resultado de las primeras clases del curso" 84aae25
+
+ngome@DESKTOP-B6TLI39 MINGW64 /d/OneDrive - Universidad de los Andes/Trabajo/platzi/curso profesional de GIT y GithHub/proyecto1 Gitlocal (master)
+$ git tag
+v0.1
+
+ngome@DESKTOP-B6TLI39 MINGW64 /d/OneDrive - Universidad de los Andes/Trabajo/platzi/curso profesional de GIT y GithHub/proyecto1 Gitlocal (master)
+$ git show-ref --tags
+2c59cb70be6d62666b8342833aa6b346974c5082 refs/tags/v0.1
+
+ngome@DESKTOP-B6TLI39 MINGW64 /d/OneDrive - Universidad de los Andes/Trabajo/platzi/curso profesional de GIT y GithHub/proyecto1 Gitlocal (master)
+$ git pull origin master
+From github.com:ngomez07/Hyperblog
+ * branch            master     -> FETCH_HEAD
+Already up to date.
+
+ngome@DESKTOP-B6TLI39 MINGW64 /d/OneDrive - Universidad de los Andes/Trabajo/platzi/curso profesional de GIT y GithHub/proyecto1 Gitlocal (master)
+$ git push origin --tags
+Enumerating objects: 1, done.
+Counting objects: 100% (1/1), done.
+Writing objects: 100% (1/1), 179 bytes | 89.00 KiB/s, done.
+Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:ngomez07/Hyperblog.git
+ * [new tag]         v0.1 -> v0.1
+
+ngome@DESKTOP-B6TLI39 MINGW64 /d/OneDrive - Universidad de los Andes/Trabajo/platzi/curso profesional de GIT y GithHub/proyecto1 Gitlocal (master)
+$ git push origin :refs/tags/dormido
+To github.com:ngomez07/Hyperblog.git
+ - [deleted]         dormido
+
+ngome@DESKTOP-B6TLI39 MINGW64 /d/OneDrive - Universidad de los Andes/Trabajo/platzi/curso profesional de GIT y GithHub/proyecto1 Gitlocal (master)
+$ git show-branch --all
+! [cabecera] modifique cabecera y color del texto
+ ! [main] Merge branch 'master' of https://github.com/ngomez07/Hyperblog
+  * [master] ahora es el 2.0
+   ! [origin/main] Merge branch 'master' of https://github.com/ngomez07/Hyperblog
+    ! [origin/master] ahora es el 2.0
+-----
+  * + [master] ahora es el 2.0
+ ---- [main] Merge branch 'master' of https://github.com/ngomez07/Hyperblog
+ ---- [main^2] soluciuone el conflicto de las ramas al fusionar
+++*++ [cabecera] modifique cabecera y color del texto
+
+ngome@DESKTOP-B6TLI39 MINGW64 /d/OneDrive - Universidad de los Andes/Trabajo/platzi/curso profesional de GIT y GithHub/proyecto1 Gitlocal (master)
+$ gitk
+
+ngome@DESKTOP-B6TLI39 MINGW64 /d/OneDrive - Universidad de los Andes/Trabajo/platzi/curso profesional de GIT y GithHub/proyecto1 Gitlocal (cabecera)
+$ git checkout master
+Switched to branch 'master'
+
+ngome@DESKTOP-B6TLI39 MINGW64 /d/OneDrive - Universidad de los Andes/Trabajo/platzi/curso profesional de GIT y GithHub/proyecto1 Gitlocal (master)
+$ git branch header
+
+ngome@DESKTOP-B6TLI39 MINGW64 /d/OneDrive - Universidad de los Andes/Trabajo/platzi/curso profesional de GIT y GithHub/proyecto1 Gitlocal (master)
+$ git branch footer
+
+ngome@DESKTOP-B6TLI39 MINGW64 /d/OneDrive - Universidad de los Andes/Trabajo/platzi/curso profesional de GIT y GithHub/proyecto1 Gitlocal (master)
+$ git branch
+  cabecera
+  footer
+  header
+  main
+* master
+
+ngome@DESKTOP-B6TLI39 MINGW64 /d/OneDrive - Universidad de los Andes/Trabajo/platzi/curso profesional de GIT y GithHub/proyecto1 Gitlocal (master)
+$ git push origin header
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'header' on GitHub by visiting:
+remote:      https://github.com/ngomez07/Hyperblog/pull/new/header
+remote:
+To github.com:ngomez07/Hyperblog.git
+ * [new branch]      header -> header
+
+ngome@DESKTOP-B6TLI39 MINGW64 /d/OneDrive - Universidad de los Andes/Trabajo/platzi/curso profesional de GIT y GithHub/proyecto1 Gitlocal (master)
+$ git push origin footer
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'footer' on GitHub by visiting:
+remote:      https://github.com/ngomez07/Hyperblog/pull/new/footer
+remote:
+To github.com:ngomez07/Hyperblog.git
+ * [new branch]      footer -> footer
+
+
+
